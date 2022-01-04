@@ -8,8 +8,7 @@ import { engine } from 'express-handlebars';
 import { Server } from 'socket.io';
 import { authMiddleware } from './services/auth.js';
 import __dirname from './utils.js';
-import Contenedor from './classes/ClassContenedor.js';
-let contenedor = new Contenedor();
+import { products } from './daos/index.js';
 
 //EXPRESS
 const app = express();
@@ -48,7 +47,7 @@ export const io = new Server(server);
 
 io.on('connection', async socket => {
     console.log(`El socket ${socket.id} se ha conectado.`);
-    let productos = await contenedor.getAll();
+    let productos = await products.getAll();
     socket.emit('updateProducts', productos);
 })
 
@@ -58,7 +57,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/views/productos', (req, res) => {
-    contenedor.getAll().then(result => {
+    products.getAll().then(result => {
         let info = result.lista;
         let prepObj = {
             productos: info

@@ -61,12 +61,11 @@
   },
   {
     "id": 8,
-    "timestamp": "Added at Tue Dec 14 2021 20:27:04 GMT-0300 (Argentina Standard Time)",
-    "nombre": "Taza ejemplo",
+    "nombre": "Taza con aumento",
     "descripcion": "Taza de ceramica",
-    "codigo": "254",
-    "price": "354",
-    "stock": "2",
-    "thumbnail": "http://localhost:8080/images/1639524424136grupo-sin-barbijo.jpg"
+    "codigo": "1546",
+    "price": "300",
+    "stock": "1",
+    "thumbnail": "http://localhost:8080/images/1639018314617Taza_Banini.jpg"
   }
 ]
