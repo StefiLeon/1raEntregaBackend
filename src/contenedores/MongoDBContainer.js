@@ -129,3 +129,27 @@ export default class MongoContainer {
         }
     }
 }
+
+// export class ChatContainer {
+//     constructor(collection, schema, timestamps) {
+//         this.collection = mongoose.model(collection, new mongoose.Schema(schema,timestamps))
+//     }
+
+//     addChat = async(object) => {
+//         try {
+//             let result = await this.collection.create(object);
+//             return {status:"success", message: `Mensaje agregado con exito.`, payload: result}
+//         } catch(err) {
+//             return {status: "error", message: "No se pudo agregar la informacion" + " "+ err}
+//         }
+//     }
+
+//     getAllChats = async() => {
+//         try {
+//             let messages = await this.collection.find();
+//             return {status: "success", lista: messages}
+//         } catch(err) {
+//             return {status: "error", error: `no se pudo obtener la informacion por ${err}`}
+//         }
+//     }
+// }

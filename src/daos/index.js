@@ -1,6 +1,8 @@
 let products;
 let carts;
-let persistence = 'firebase';
+let authors;
+let messages;
+let persistence = 'mongoDB';
 
 switch(persistence) {
     case "fileSystem":
@@ -13,9 +15,13 @@ switch(persistence) {
     case 'mongoDB':
         const {default:ProductsMongo} = await import('./productos/productosMongoDB.js');
         const {default:CarritoMongoDB} = await import('./carritos/carritosMongoDB.js');
+        const {default:AuthorsMongoDB} = await import('./chat/authors.js');
+        const {default:MessagesMongoDB} = await import('./chat/messages.js');
 
         products = new ProductsMongo();
         carts = new CarritoMongoDB();
+        authors = new AuthorsMongoDB();
+        messages = new MessagesMongoDB();
         break;
     case 'firebase':
         const {default:ProductsFirebase} = await import ('./productos/productosFirebase.js');
